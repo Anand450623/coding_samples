@@ -24,7 +24,7 @@ int main()
 
 	int i=0,j=0,count=0;
 
-	while(i<5 && j<4)
+	while(i<5 && j<4) // "a" size = 5, "b" size = 4
 	{
 		if(a[i]==b[j])
 		{
