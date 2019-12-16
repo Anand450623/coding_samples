@@ -1,7 +1,7 @@
 /*
  * Problem: Given n events with their durations and deadlines. The goal is to choose an order to perform the task such that (d-x) is maximum
- * 			where d = task's deadline
- * 			and x = moment when the task finished
+ * 	    where d = task's deadline
+ * 	    and x = moment when the task finished
  * Author: Anand Kumar
  */
 
