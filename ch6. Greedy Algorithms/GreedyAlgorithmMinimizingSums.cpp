@@ -1,6 +1,6 @@
 /*
  * Problem: Given n numbers in form of an array. The goal is to find a number x such that the sum |a-x|^c+|b-x|^c+...+|n-x|^c is minimum.
- * 			we are assuming the value for c as either 1 or 2 only.
+ * 	    we are assuming the value for c as either 1 or 2 only.
  * Author: Anand Kumar
  */
 
