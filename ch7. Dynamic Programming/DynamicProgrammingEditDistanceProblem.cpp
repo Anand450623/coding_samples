@@ -54,6 +54,8 @@ int main()
 		cout<<endl;
 	}
 
+	cout<<"\nThe mimimum number of edit operations needed is = "<<distance[row-1][col-1];
+
 	return 0;
 
 }
