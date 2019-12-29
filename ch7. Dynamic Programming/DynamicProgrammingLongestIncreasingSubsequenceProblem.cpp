@@ -9,10 +9,10 @@ using namespace std;
 int main()
 {
 
-	int arr[] = {6,2,5,1,7,4,8,3};
+	int arr[] = {2,5,3,7,11,8,10,13,6};
 	int arr_size = sizeof(arr)/sizeof(arr[0]) ;
 	int max_len[arr_size] = {0};
-	int subarray_index[arr_size] = {0};
+	int subarray_index[arr_size] = {-1};
 
 	for(int i=0;i<arr_size;i++)
 	{
@@ -45,7 +45,7 @@ int main()
 	cout<<"The length of longest increasing subsequence = "<<max<<endl;
 	cout<<"The longest increasing subsequence is :::\n";
 	vector<int> required_sequence;
-	while(subarray_index[max_index]!=0)
+	while(subarray_index[max_index]!=-1)
 	{
 		required_sequence.push_back(arr[max_index]);
 		max_index = subarray_index[max_index];
