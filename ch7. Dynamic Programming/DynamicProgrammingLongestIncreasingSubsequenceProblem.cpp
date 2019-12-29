@@ -10,8 +10,9 @@ int main()
 {
 
 	int arr[] = {6,2,5,1,7,4,8,3};
-	int arr_size=8;
+	int arr_size = sizeof(arr)/sizeof(arr[0]) ;
 	int max_len[arr_size] = {0};
+	int subarray_index[arr_size] = {0};
 
 	for(int i=0;i<arr_size;i++)
 	{
@@ -20,20 +21,42 @@ int main()
 		{
 			if(arr[j]<arr[i])
 			{
-				max_len[i] = max(max_len[i],max_len[j]+1);
+				int max = (max_len[i]>max_len[j]+1)?i:j;
+				if(max!=i)
+				{
+					max_len[i] = max_len[j]+1;
+					subarray_index[i]=j;
+				}
 			}
 		}
 	}
 
 	int max = INT32_MIN;
+	int max_index = -1;
 	for(int i=0;i<arr_size;i++)
 	{
-		cout<<max_len[i]<<" ";
 		if(max<max_len[i])
+		{
 			max = max_len[i];
+			max_index=i;
+		}
 	}
 
-	cout<<"\nThe length of longest increasing subsequence = "<<max<<endl;
+	cout<<"The length of longest increasing subsequence = "<<max<<endl;
+	cout<<"The longest increasing subsequence is :::\n";
+	vector<int> required_sequence;
+	while(subarray_index[max_index]!=0)
+	{
+		required_sequence.push_back(arr[max_index]);
+		max_index = subarray_index[max_index];
+	}
+	required_sequence.push_back(arr[max_index]);
+
+	for(int i=required_sequence.size()-1;i>=0;i--)
+	{
+		cout<<required_sequence[i]<<" ";
+	}
+	cout<<endl;
 
 	return 0;
 
