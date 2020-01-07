@@ -30,28 +30,43 @@ class Graph
 		this->adj[v].push_back(n);
 	}
 
+	void BFSUtils(bool visited[],int start_index)
+	{
+
+		queue<int> q;
+		q.push(start_index);
+		visited[start_index]=true;
+
+		while(!q.empty())
+		{
+			int curr_ele = q.front();
+			cout<<curr_ele<<" ";
+
+
+			q.pop();
+
+			for(auto i:this->adj[curr_ele])
+				if(!visited[i])
+				{
+					visited[i]=true;
+					q.push(i);
+				}
+
+		}
+
+	}
+
 	void BFS(int start_index)
 	{
 		bool visited[this->N];
 		for(int i=0;i<this->N;i++)
 			visited[i] = false;
 
-		queue<int> q;
-		q.push(start_index);
+		BFSUtils(visited,start_index); // if starting index is there
 
-		while(!q.empty())
-		{
-			int curr_ele = q.front();
-			cout<<curr_ele<<" ";
-			visited[curr_ele]=true;
-
-			q.pop();
-
-			for(auto i:this->adj[curr_ele])
-				if(!visited[i])
-					q.push(i);
-
-		}
+		for(int i=0;i<this->N;i++)
+			if(!visited[i])
+				BFSUtils(visited,i);
 
 	}
 
