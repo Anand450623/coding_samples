@@ -1,5 +1,5 @@
 /*
- * Problem : Given an array of integers, implement a segment tree for range sum and single updation problem.
+ * Problem : Given an array of integers, implement a segment tree for range minimum query.
  * Author: Anand Kumar
  */
 
