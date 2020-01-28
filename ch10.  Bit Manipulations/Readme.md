@@ -16,3 +16,10 @@ More generally, x is divisible by 2^k exactly when x&(2^k-1)==0
 10. x&-x : sets all the bits to zero except the last one bit
 11. x&(x-1) : sets the last one bit of  x to zero
 12. x|(x-1) : inverts all bits after the last one bit
+
+built-in functions with g++ compiler : 
+
+1. __builtin_clz(x): This function is used to count the number of zeroes at the begining of the number.
+2. __builtin_ctz(x): This function is used to count the number of zeroes at the end of the number.
+3. __builtin_popcount(x): This function is used to count the number of one’s(set bits) in an integer.
+4. __builtin_parity(x): This function is used to check the parity of a number. This function returns true(1) if the number has odd parity else it returns false(0) for even parity.
