@@ -23,3 +23,8 @@ built-in functions with g++ compiler :
 2. __builtin_ctz(x): This function is used to count the number of zeroes at the end of the number.
 3. __builtin_popcount(x): This function is used to count the number of one’s(set bits) in an integer.
 4. __builtin_parity(x): This function is used to check the parity of a number. This function returns true(1) if the number has odd parity else it returns false(0) for even parity.
+
+Parity of a number refers to whether it contains an odd or even number of 1-bits. The number has “odd parity”, if it contains odd number of 1-bits and is “even parity” if it contains even number of 1-bits.
+
+While, the above functions support only int numbers, there are also long and long long versions of the functions avialable with the suffix ll.
+Eg. __builtin_popcountl(x) ,  __builtin_popcountll(x) and similarly for others as well.
