@@ -1,0 +1,1 @@
+This pdf contains all the basic notations to get started with the concepts of graph theory.
