@@ -1,0 +1,1 @@
+This repository contains sample codes for implementation of spanning tree algorithms.
