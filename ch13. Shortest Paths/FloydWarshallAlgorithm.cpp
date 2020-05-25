@@ -1,63 +1,56 @@
 /*============================================================================
  * Problem : Implement floyd warshall Algorithm for all pair shortest path.
- *
+ * Link	   : https://www.hackerrank.com/challenges/floyd-city-of-blinding-lights/problem
  * Author  : Anand Kumar
 ============================================================================*/
 
 #include <bits/stdc++.h>
-#define NO_OF_VERTICES  5
 using namespace std;
-
-void floydWarshall(int wt[][NO_OF_VERTICES])
-{
-
-	//initial state
-	for(int i=0;i<NO_OF_VERTICES;i++)
-	{
-		for(int j=0;j<NO_OF_VERTICES;j++)
-		{
-			cout<<wt[i][j]<<" ";
-		}
-		cout<<endl;
-	}
-
-	cout<<"***************************************************************************"<<endl<<endl;
-
-	for(int k=0;k<NO_OF_VERTICES;k++)
-		for(int i=0;i<NO_OF_VERTICES;i++)
-			for(int j=0;j<NO_OF_VERTICES;j++)
-				wt[i][j] = min(wt[i][j],wt[i][k]+wt[k][j]);
-
-
-	//final state -- after floyd warshall implementation
-	for(int i=0;i<NO_OF_VERTICES;i++)
-	{
-		for(int j=0;j<NO_OF_VERTICES;j++)
-		{
-			cout<<wt[i][j]<<" ";
-		}
-		cout<<endl;
-	}
-
-}
 
 int main()
 {
 
-	/*
-	 * 	 Here, 999 is used as INT32_MAX
-	 * 		   because if original INT32_MAX is used in code then while adding it with any positive number will lead to overflow
-	 * 		   and which will result in largest negative number ideally, INT32_MIN
-	 * 		   and therefore, the algo will never produce correct result.
-	 */
+	//Here, n=Number of Vertices, m=Number of edges
+	int n,m;
+	cin>>n>>m;
 
-	int wt[][NO_OF_VERTICES] = {{0,5,999,9,1},
-							    {5,0,2,999,999},
-							    {999,2,0,7,999},
-							    {9,999,7,0,2},
-							    {1,999,999,2,0}};
+	//initial state, 9999 considered as infinite distance
+	int wt[n+1][n+1];
+	for(int i=1;i<=n;i++)
+		for(int j=1;j<=n;j++)
+			if(i==j)
+				wt[i][j]=0;
+			else
+				wt[i][j]=9999;
 
-	floydWarshall(wt);
+
+	//taking inputs for path
+	for(int i=0;i<m;i++)
+	{
+		int a,b,c;
+		cin>>a>>b>>c;
+		wt[a][b]=c;
+	}
+
+	//floyd-warshall algorithm
+	for(int k=1;k<=n;k++)
+		for(int i=1;i<=n;i++)
+			for(int j=1;j<=n;j++)
+				wt[i][j]=min(wt[i][j],wt[i][k]+wt[k][j]);
+
+	//q=Number of queries
+	int q;
+	cin>>q;
+
+	for(int i=0;i<q;i++)
+	{
+		int a,b;
+		cin>>a>>b;
+		if(wt[a][b]!=9999)
+			cout<<wt[a][b]<<endl;
+		else
+			cout<<-1<<endl;
+	}
 
 	return 0;
 
