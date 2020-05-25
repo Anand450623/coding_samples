@@ -13,7 +13,7 @@ void topologicalSort(int vertice, vector<int> adj[], int noOfVertices, bool visi
 {
 
 	/*
-	 * Here, State 0 for node denoted not visited
+	 * Here, State 0 for node denotes not visited
 	 * State 1 for node denotes under process or inside recursion stack
 	 * State 2 represents processed.
 	*/
