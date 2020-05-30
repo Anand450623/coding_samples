@@ -55,6 +55,13 @@ int main()
 	int res = successor[binarySteps.size()-1][sourceNode];
 	for(int i=binarySteps.size()-2;i>=0;i--)
 		res = successor[i][res];
+	
+	/*
+	* An alternate approach : added later
+	int res=sourceNode;
+	for(auto i:binarySteps)
+		res = successor[i][res];
+	*/
 
 	cout<<res<<endl;
 
