@@ -77,7 +77,7 @@ int main()
 	adj[4].push_back(8);
 	adj[4].push_back(9);
 
-	data.push_back(-1);
+	data.push_back(-1); //inserting a dummy data node value so to bring everything in sync and start each component with 1.
 	data.push_back(2);
 	data.push_back(3);
 	data.push_back(5);
