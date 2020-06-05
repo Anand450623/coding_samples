@@ -1,5 +1,5 @@
 /*============================================================================
- * Problem : Find the lowest common ancestor for given nodes.
+ * Problem : Find the lowest common ancestor for given nodes using Euler path and segment tree.
  *
  * Author  : Anand Kumar
 ============================================================================*/
@@ -91,7 +91,7 @@ int main()
 		segmentTree[i] = min(segmentTree[2*i],segmentTree[2*i+1]);
 
 	int node1 = 5;
-	int node2 = 6;
+	int node2 = 3;
 	bool isNode1Found = false;
 	bool isNode2Found = false;
 	int indexForNode1 = -1;
