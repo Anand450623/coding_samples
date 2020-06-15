@@ -38,7 +38,7 @@ bool knightsTour(int board[8][8], int cx, int cy, int moveCount, int possibleX[]
 	}
 	else
 	{
-		for(int i=0;i<8;i++)
+		for(int i=0;i<9;i++)
 		{
 			int n_cx = cx+possibleX[i];
 			int n_cy = cy+possibleY[i];
