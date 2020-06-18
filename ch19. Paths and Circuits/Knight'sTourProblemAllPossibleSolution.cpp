@@ -1,18 +1,22 @@
 /*============================================================================
- * Problem : Implement solution for knight's tour problem on a n*n board. Eg., n=8
+ * Problem : Implement solution for getting all possible tour's for knight's tour problem on a n*n board.
  *
  * Author  : Anand Kumar
 ============================================================================*/
 
 #include <bits/stdc++.h>
+#define N 5
 using namespace std;
 
-void printBoard(int board[8][8])
+int count = 0;
+void printBoard(int board[N][N])
 {
 
-	for(int i=0;i<8;i++)
+	cout<<"Solution count = #"<<::count<<endl<<endl;
+	::count++;
+	for(int i=0;i<N;i++)
 	{
-		for(int j=0;j<8;j++)
+		for(int j=0;j<N;j++)
 			cout<<setw(2)<<board[i][j]<<" ";
 		cout<<endl;
 	}
@@ -21,17 +25,17 @@ void printBoard(int board[8][8])
 
 }
 
-bool isSafe(int x, int y, int board[8][8])
+bool isSafe(int x, int y, int board[N][N])
 {
-	if(x<0 || x>7 || y<0 || y>7 || board[x][y]!=0)
-		return false;
-	else
+	if(x>=0 && x<N && y>=0 && y<N && board[x][y]==0)
 		return true;
+	else
+		return false;
 }
 
-bool knightTour(int x, int y,int board[8][8], int possibleX[], int possibleY[])
+bool knightTour(int x, int y,int board[N][N], int possibleX[], int possibleY[])
 {
-	if(board[x][y]==64)
+	if(board[x][y]==N*N)
 	{
 		printBoard(board);
 		return true;
@@ -39,24 +43,23 @@ bool knightTour(int x, int y,int board[8][8], int possibleX[], int possibleY[])
 	else
 	{
 
+		bool res = false;
 		for(int i=0;i<8;i++)
 		{
-			if(isSafe(x+possibleX[i], y+possibleY[i], board))
+
+			int nx = x+possibleX[i];
+			int ny = y+possibleY[i];
+
+			if(isSafe(nx, ny, board))
 			{
-				int nx = x+possibleX[i];
-				int ny = y+possibleY[i];
 				board[nx][ny] = board[x][y]+1;
-
-				if(knightTour(nx, ny, board, possibleX, possibleY))
-					return true;
-
+				res = knightTour(nx, ny, board, possibleX, possibleY) || res ;
 				board[nx][ny] = 0;
-
 			}
 
 		}
 
-		return false;
+		return res;
 
 	}
 }
@@ -64,7 +67,7 @@ bool knightTour(int x, int y,int board[8][8], int possibleX[], int possibleY[])
 int main()
 {
 
-	int board[8][8];
+	int board[N][N];
 
 	int possibleX[] = {2,1,-1,-2,-2,-1,1,2};
 	int possibleY[] = {1,2,2,1,-1,-2,-2,-1};
