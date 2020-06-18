@@ -18,6 +18,12 @@ belong to the same strongly connected component and
 2. In one node, the indegree is one larger than the outdegree, in another node, the outdegree is one larger than the indegree, and in all other
    nodes, the indegree equals the outdegree.
    
+Application of Eulerian Paths in genology:
+
+1. De-Brujin Sequence
+   
+=================================================================================================================================
+
 Hamiltonian Paths and Circuits:
 
 A Hamiltonian path is a path that visits each node of the graph exactly once.
@@ -31,3 +37,7 @@ Existance:
 2. Ore's theorem: If the sum of degress of each non-adjacent pair of nodes is at least n, the graph contains a Hamiltonian path.
 
 For a complete undirected graph with N vertices, the total count of hamiltonian paths is (n-1)!/2
+
+Application in modelling:
+
+1. Knight's tour problem
