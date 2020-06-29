@@ -1,81 +1,59 @@
 /*============================================================================
  * Problem : Implement Edmand-karp Algorithm for finding maximum flow in a graph.
- * NOTE    : Reverse flow is not implemented i.e., only the forward flow is enough to get the solution.
+ * Link    : https://www.hackerearth.com/practice/algorithms/graphs/maximum-flow/practice-problems/algorithm/find-the-flow/description/
  * Author  : Anand Kumar
 ============================================================================*/
 
 #include<bits/stdc++.h>
 using namespace std;
 
-bool bfs(vector<pair<int,int>> adj[], int nodes, int source, int sink, int* flow)
+bool bfs(unordered_map<char,unordered_map<char,int>> &adj, char source, char sink, set<char> nodes, int &flow)
 {
 
-	bool visited[nodes]={false};
-	int parent[nodes]={0};
+	unordered_map<char,int> parent;
+	for(auto x:nodes)
+	{
+		parent[x]=-1;
+	}
 
-	queue<int> q;
+	queue<char> q;
 	q.push(source);
-
+	parent[source] = 0;
 	while(!q.empty())
 	{
-
-		int curr = q.front();
+		char curr = q.front();
 		q.pop();
-
-		for(auto next:adj[curr])
+		for(auto x:adj[curr])
 		{
-			int x,wt;
-			tie(x,wt) = next;
-			if(visited[x] || wt==0)
-				continue;
-			else
+			if(parent[x.first] == -1 && x.second >0)
 			{
-				visited[x]=true;
-				parent[x] = curr;
-				q.push(x);
+				q.push(x.first);
+				parent[x.first] = curr;
 			}
 		}
-
 	}
 
 	bool res = false;
-	vector<int> path;
-	vector<int> capacity;
-	if(visited[sink])
+	if(parent[sink]!=-1)
 	{
-		res = true;
-		while(parent[sink]!=0)
+		res=true;
+		int min_wt = INT_MAX;
+		for(char v = sink; v!=source ; v = parent[v])
 		{
-			for(auto x:adj[parent[sink]])
-			{
-				int a,b;
-				tie(a,b) = x;
-				if(a==sink)
-				{
-					capacity.push_back(b);
-					path.push_back(a);
-					break;
-				}
-			}
-			sink = parent[sink];
+			char u = parent[v];
+			if(adj[u][v] < min_wt)
+				min_wt = adj[u][v];
 		}
 
-		int min_wt = *min_element(capacity.begin(),capacity.end());
-		*flow += min_wt;
+		flow += min_wt;
 
-		while(!path.empty())
+		for(char v = sink; v!=source ; v = parent[v])
 		{
-			int item = path.back();
-			path.pop_back();
-			for(vector<pair<int,int>>::iterator it = adj[source].begin(); it!=adj[source].end();++it)
-			{
-				if(it->first == item)
-				{
-					it->second -= min_wt;
-					break;
-				}
-			}
-			source = item;
+			char u = parent[v];
+			adj[u][v] -= min_wt;
+			if(adj[u][v]==0)
+				adj[u].erase(v);
+			adj[v][u] += min_wt;
 		}
 
 	}
@@ -84,65 +62,37 @@ bool bfs(vector<pair<int,int>> adj[], int nodes, int source, int sink, int* flow
 
 }
 
-int findMaxFlow(vector<pair<int,int>> adj[], int nodes,int source, int sink)
+int max_flow(unordered_map<char,unordered_map<char,int>> adj, char source, char sink, set<char> nodes)
 {
 	int flow = 0;
-	while(bfs(adj, nodes,source, sink, &flow));
+	while(bfs(adj, source, sink, nodes, flow));
 	return flow;
 }
 
 int main()
 {
 
-	int no_of_Vertices = 6;
-	vector<pair<int,int>> adj[no_of_Vertices+1];
-	int count[no_of_Vertices+1]={0};
+	unordered_map<char,unordered_map<char,int>> adj;
+	adj['S']['A']=8;
+	adj['S']['B']=10;
+	adj['A']['C']=8;
+	adj['A']['B']=4;
+	adj['A']['D']=5;
+	adj['B']['C']=5;
+	adj['B']['D']=2;
+	adj['C']['D']=3;
+	adj['C']['T']=4;
+	adj['D']['T']=12;
 
-/*	adj[1].push_back({2,5});
-	adj[1].push_back({4,4});
-	adj[2].push_back({3,6});
-	adj[3].push_back({6,5});
-	adj[3].push_back({5,8});
-	adj[4].push_back({2,3});
-	adj[4].push_back({5,1});
-	adj[5].push_back({6,2});*/
+	set<char> nodes;
+	nodes.insert('S');
+	nodes.insert('A');
+	nodes.insert('B');
+	nodes.insert('C');
+	nodes.insert('D');
+	nodes.insert('T');
 
-
-	adj[1].push_back({2,7});
-	adj[1].push_back({4,4});
-	adj[2].push_back({3,5});
-	adj[2].push_back({5,3});
-	adj[3].push_back({6,8});
-	adj[4].push_back({2,3});
-	adj[4].push_back({5,2});
-	adj[5].push_back({3,3});
-	adj[5].push_back({6,5});
-
-	int source =-1;
-	int sink = -1;
-
-	for(int i=1;i<=no_of_Vertices;i++)
-	{
-		int outCount=0;
-		for(auto x:adj[i])
-		{
-			count[x.first]++;
-			outCount++;
-		}
-		if(outCount==0)
-			sink = i;
-	}
-
-	for(int i=1;i<=no_of_Vertices;i++)
-	{
-		if(count[i]==0)
-		{
-			source=i;
-			break;
-		}
-	}
-
-	cout<<"Maximum possible flow for the given graph is = "<<findMaxFlow(adj,no_of_Vertices+1,source,sink);
+	cout<<"The maximum required flow is  = "<<max_flow(adj, 'S', 'T', nodes);
 
 	return 0;
 
