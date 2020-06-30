@@ -4,160 +4,111 @@
  * Author  : Anand Kumar
 ============================================================================*/
 
-#include <bits/stdc++.h>
-#define V 7
+#include<bits/stdc++.h>
 using namespace std;
 
-int dfs(int adj[][V], bool visited[], int source, int sink, int minimum, vector<int> &path, int delta)
+int dfs(unordered_map<char, unordered_map<char, int>> adj, unordered_map<char, int> &parent, char source,char source_parent, int delta, char sink, int minimum)
 {
 
-	visited[source]=true;
-	if(source==sink)
-		return minimum;
-
-	for(int i=1;i<V;i++)
+	if(source == sink)
 	{
-		if(adj[source][i]>0 && !visited[i])
-		{
-			int flow = adj[source][i] - adj[i][source];
-			if(flow < delta)
-				continue;
-			if(int val = dfs(adj,visited,i,sink,min(minimum,flow), path, delta))
-			{
-				path.push_back(i);
-				return val;
-			}
-		}
+		parent[source] = source_parent;
+		return minimum;
+	}
+
+	parent[source] = source_parent;
+	for(auto x:adj[source])
+	{
+		if(parent[x.first] == -1 && x.second >= delta)
+			if(int minm = dfs(adj, parent, x.first, source, delta, sink, min(minimum, x.second)))
+				return minm;
 	}
 
 	return 0;
 
 }
 
-void initialize(bool visited[], vector<int> &path, int *min)
-{
-	*min = INT_MAX;
-	path.clear();
-	for(int i=0;i<V;i++)
-		visited[i] = false;
-}
-
-
-void showGraph(int adj[][V])
+int find_max_flow(unordered_map<char, unordered_map<char, int>> adj, set<char> nodes)
 {
 
-	cout<<"\n********************************\n";
-	for(int i=1;i<V;i++)
+	int max = INT_MIN;
+	char source = 'S';
+	char sink = 'T';
+
+	for(auto x:nodes)
 	{
-		for(int j=1;j<V;j++)
+		for(auto i:adj[x])
 		{
-			cout<<setw(2)<<adj[i][j]<<" ";
+			if(max<i.second)
+				max = i.second;
 		}
-		cout<<endl;
 	}
-	cout<<"\n********************************\n";
 
-}
-
-int maxFlow(int adj[][V], int nodes, int source, int sink)
-{
-
-	int max=0;
-	for(int i=1;i<nodes;i++)
-		for(int j=1;j<nodes;j++)
-			if(max<adj[i][j])
-				max=adj[i][j];
-
-	int delta = pow(2,int(log2(max)));
-	bool visited[nodes]={0};
-	vector<int> path;
-	int minimum = INT_MAX;
+	int delta = 1<<int(floor(log2(max)));
 	int max_flow = 0;
 
-	cout<<"Input graph :::\n";
-	showGraph(adj);
-	cout<<"Trying with initial delta value = "<<delta<<endl;
-
-	while(delta > 0)
+	while(delta>0)
 	{
-		initialize(visited, path, &minimum);
-		while(int val = dfs(adj,visited,source,sink,minimum,path,delta))
+
+		unordered_map<char, int> parent;
+		int minimum = INT_MAX;
+		for(auto x:nodes)
+			parent[x] = -1;
+
+		int min_value = dfs(adj, parent, source, 0, delta, sink, minimum);
+		max_flow += min_value;
+
+		if(parent[sink] == -1)
 		{
-			max_flow += val;
-			path.push_back(source);
-			for(int i=path.size()-2; i>=0;i--)
-				adj[path[i]][path[i+1]] += val;
-
-			cout<<"\n********************************\n";
-			cout<<"path found with minimum value = "<<val<<", path = ";
-			for(int x = path.size()-1; x>=0; x--)
-				cout<<path[x]<<" ";
-
-			showGraph(adj);
-			initialize(visited, path, &minimum);
-			cout<<"trying again with delta "<<delta<<endl;
+			delta /= 2;
+		}
+		else
+		{
+			for(char v = sink; v!=source; v = parent[v])
+			{
+				char u = parent[v];
+				adj[u][v] -= min_value;
+				if(adj[u][v]==0)
+					adj[u].erase(v);
+				adj[v][u] += min_value;
+				cout<<v<<" ";
+			}
+			cout<<source<<" -> "<<min_value<<endl;
 
 		}
 
-		showGraph(adj);
-		cout<<"\nchanging delta to "<<delta/2<<endl;
-
-		delta /= 2;
 	}
 
+	cout<<"The maximum flow is given by = ";
 	return max_flow;
 
 }
 
+
 int main()
 {
 
-	int no_of_nodes =  6;
-	/*int adj[no_of_nodes+1][V]={{0,0,0,0,0,0,0},
-							   {0,0,10,0,10,0,0},
-							   {0,0,0,25,0,0,0},
-							   {0,0,0,0,0,0,10},
-							   {0,0,0,0,0,15,0},
-							   {0,0,6,0,0,0,10},
-							   {0,0,0,0,0,0,0}};*/
+	unordered_map<char,unordered_map<char,int>> adj;
+	adj['S']['A']=8;
+	adj['S']['B']=10;
+	adj['A']['C']=8;
+	adj['A']['B']=4;
+	adj['A']['D']=5;
+	adj['B']['C']=5;
+	adj['B']['D']=2;
+	adj['C']['D']=3;
+	adj['C']['T']=4;
+	adj['D']['T']=12;
 
-	int adj[no_of_nodes+1][V]={{0,0,0,0,0,0,0},
-							   {0,0,5,0,4,0,0},
-							   {0,0,0,6,0,0,0},
-							   {0,0,0,0,0,8,5},
-							   {0,0,3,0,0,1,0},
-							   {0,0,0,0,0,0,2},
-							   {0,0,0,0,0,0,0}};
+	set<char> nodes;
+	nodes.insert('S');
+	nodes.insert('A');
+	nodes.insert('B');
+	nodes.insert('C');
+	nodes.insert('D');
+	nodes.insert('T');
 
-	int source=0, sink=0;
-	int in_count[V] = {0};
-	int out_count[V] = {0};
-
-	for(int i=1;i<V; i++)
-	{
-		for(int j=1;j<V;j++)
-		{
-			if(adj[i][j])
-			{
-				out_count[i]++;
-				in_count[j]++;
-			}
-		}
-	}
-
-	for(int i=1; i<V; i++)
-	{
-		if(in_count[i]==0)
-			source = i;
-		if(out_count[i]==0)
-			sink = i;
-	}
-
-	cout<<"Source for given graph = "<<source<<endl;
-	cout<<"Sink for given graph = "<<sink<<endl;
-
-	int max_flow = maxFlow(adj,V,source,sink);
-	cout<<"\n\nMaximum flow for the given graph = "<<max_flow<<endl;
+	cout<<"various possible paths with associated weights are :::\n"<<find_max_flow(adj, nodes);
 
 	return 0;
 
