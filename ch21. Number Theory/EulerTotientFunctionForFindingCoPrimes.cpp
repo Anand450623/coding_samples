@@ -60,10 +60,16 @@ unordered_map<int,int> findFactorCount(int n)
 
 }
 
+/*
+ * If the input number is prime, then every other number will be a co-prime for that,
+ * therefore, the number of co-prime is equal to (n-1) for input n;
+ * where, n is a prime number.
+ */
+
 int main()
 {
 
-	int n = 12;
+	int n = 13;
 	unordered_map<int,int> map = findFactorCount(n);
 
 	int coPrimeCount = 1;
