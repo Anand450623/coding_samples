@@ -45,6 +45,9 @@ unordered_map<int,int> findFactorCount(int n)
 
 	}
 
+	if(n > 1)
+		map[n] = 1;
+	
 	return map;
 
 }
