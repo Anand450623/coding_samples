@@ -18,3 +18,14 @@ The Powers of an adjacency matrix of a graph have an interesting property. When 
 the matrix V raised to power n contains the number of paths of n edges between the nodes in the graph.
 
 for example., if V^4[2, 5] = 2, then there are two paths of 4 edges from node 2 to node 5.
+
+Kirchoff's theorem for finding count of spanning tree for a given graph:
+
+To calculate the number of spanning trees, we construct Laplacian matrix L, where L[i,i] is the degree of node i,
+and L[i,j] = -1 if there's an edge between nodes i and j, and otherwise L[i,j] = 0. It has been proved that the number of spanning
+trees equals the determinant of a matrix that is obtained when we remove any row and any column from L.
+
+Also, the determinant is always the same, regardless of which row and column we remove from L.
+
+NOTE: Cayley's formula is a special case of Kirchoff's theorem, becuase in a complete graph of n nodes the number of spanning trees 
+is n^(n-2).
