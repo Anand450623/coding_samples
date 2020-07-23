@@ -74,7 +74,7 @@ int main()
 							   { 0, 0, 0, 0.65, 0, 0.38 },
 							   { 0, 0.85, 0.37, 0.35, 1.0, 0 }};
 
-	power(probability, 100);
+	power(probability, t);
 	float entryMat[N] = {0};
 	entryMat[s-1] = 1;
 
