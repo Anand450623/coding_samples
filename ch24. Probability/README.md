@@ -17,3 +17,13 @@ so, P[B][T]  = P[A][T-1]* P[A][B]
 This P[B][T] has to be summmed upon for all the adjacent states of B.
 
 Reference link: https://www.geeksforgeeks.org/find-the-probability-of-a-state-at-a-given-time-in-a-markov-chain-set-1/?ref=lbp
+
+Randomized Algorithm:::
+
+An algorithm that uses random numbers to decide what to do next anywhere in its logic is called Randomized Algorithm.
+
+Some randomized algorithms have deterministic time complexity. 
+Such algorithms are called Monte Carlo Algorithms and are easier to analyse for worst case.
+
+On the other hand, time complexity of other randomized algorithms (other than Las Vegas) is dependent on value of random variable. 
+Such Randomized algorithms are called Las Vegas Algorithms.
