@@ -27,3 +27,9 @@ Such algorithms are called Monte Carlo Algorithms and are easier to analyse for 
 
 On the other hand, time complexity of other randomized algorithms (other than Las Vegas) is dependent on value of random variable. 
 Such Randomized algorithms are called Las Vegas Algorithms.
+
+Graph Coloring Algorithm:
+
+Welsh–Powell Algorithm: This algorithm is a greedy algorithm for choosing from the available colors but the fact which makes it faster than
+the other non-planned approach is that it process the nodes in the order of their degree. i.e., node having the highest degree is processed 
+first.
