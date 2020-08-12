@@ -39,9 +39,6 @@ void insertIntoTrie(trie* root, string data)
 bool search(trie* root, string data)
 {
 
-	if(root == NULL)
-		return false;
-
 	trie* temp = root;
 	for(unsigned int i=0; i<data.length(); i++)
 	{
@@ -51,7 +48,7 @@ bool search(trie* root, string data)
 		temp = temp->child[index];
 	}
 
-	return temp->isEndNode;
+	return (temp!=NULL && temp->isEndNode); 
 
 }
 
