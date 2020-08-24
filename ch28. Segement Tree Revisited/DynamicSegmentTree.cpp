@@ -1,3 +1,9 @@
+/*
+ * Problem   : Given an array of integers, implement a dynamic segment tree for sparse array.
+ * Reference : https://www.geeksforgeeks.org/dynamic-segment-trees-online-queries-for-range-sum-with-point-updates/
+ * Author    : Anand Kumar
+ */
+
 #include<bits/stdc++.h>
 using namespace std;
 
