@@ -1,6 +1,6 @@
 /*
  * Problem   : Given array of n points in plane, find 2 points whose euclidean distance is minimum.
- * Reference : https://www.geeksforgeeks.org/closest-pair-of-points-onlogn-implementation/
+ * Reference : https://www.geeksforgeeks.org/closest-pair-of-points-o(nlogn)-implementation/
  * Author    : Anand Kumar
  */
 
