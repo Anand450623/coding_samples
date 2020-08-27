@@ -33,12 +33,12 @@ typedef struct point
 
 bool cw(point a, point b, point c)
 {
-	return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) > 0;
+	return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) < 0;
 }
 
 bool ccw(point a, point b, point c)
 {
-	return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) < 0;
+	return a.x*(b.y-c.y)+b.x*(c.y-a.y)+c.x*(a.y-b.y) > 0;
 }
 
 vector<point> convexHull(vector<point> points)
@@ -61,17 +61,17 @@ vector<point> convexHull(vector<point> points)
 
 	for(unsigned int i=1; i<points.size(); i++)
 	{
-		if(i == points.size()-1 || ccw(p1, points[i], p2))
+		if(i == points.size()-1 || cw(p1, points[i], p2))
 		{
-			while(up.size() >= 2 && !ccw(up[up.size()-2], up[up.size()-1], points[i]))
+			while(up.size() >= 2 && !cw(up[up.size()-2], up[up.size()-1], points[i]))
 			{
 				up.pop_back();
 			}
 			up.push_back(points[i]);
 		}
-		if(i == points.size()-1 || cw(p1, points[i], p2))
+		if(i == points.size()-1 || ccw(p1, points[i], p2))
 		{
-			while(down.size() >= 2 && !cw(down[down.size()-2], down[down.size()-1], points[i]))
+			while(down.size() >= 2 && !ccw(down[down.size()-2], down[down.size()-1], points[i]))
 			{
 				down.pop_back();
 			}
@@ -91,7 +91,7 @@ vector<point> convexHull(vector<point> points)
 int main()
 {
 
-	vector<point> points = {{0, 3}, {1, 1}, {2, 2}, {4, 4}, {0, 0}, {1, 2}, {3, 1}, {3, 3}};
+	vector<point> points = {{1,1},{2,2},{2,0},{2,4},{3,3},{4,2}};
 
 	//{{0, 3}, {1, 1}, {2, 2}, {4, 4}, {0, 0}, {1, 2}, {3, 1}, {3, 3}};
 	//{{1,1},{2,2},{2,0},{2,4},{3,3},{4,2}};
