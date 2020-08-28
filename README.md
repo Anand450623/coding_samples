@@ -3,223 +3,223 @@ This repository contains sample start-off lessons for coding
 
 ch01. Introduction
 
-	CompetitiveCodingBasicTemplate
-	FileIO
-	Introduction
-	LengthOfNumberRepresentationForGivenBase
-	TakingInfiniteInputs
+	CompetitiveCodingBasicTemplate.cpp
+	FileIO.cpp
+	Introduction.pdf
+	LengthOfNumberRepresentationForGivenBase.cpp
+	TakingInfiniteInputs.cpp
 ch02. Time complexity
 
-	KadaneAlgorithm
-	Time complexity
+	KadaneAlgorithm.cpp
+	Time complexity.pdf
 ch03. Sorting
 
-	Sorting
-	MergeSort
+	Sorting.pdf
+	MergeSort.cpp
 ch04. Data Structures
 
-	countingCommonElements
-	nearestNumber
-	usingBitSet
-	usingPriorityQueue
+	countingCommonElements.cpp
+	nearestNumber.cpp
+	usingBitSet.cpp
+	usingPriorityQueue.cpp
 ch05. Complete Search
 
-	ArrayAndSumProblem
-	GeneratingPermutationUsingRecursion
-	GeneratingSubsetsRecursively
-	GeneratingSubsetsUsingBitMap
-	NQueenProblemTotalSolutionCount
-	NQueenProblemUsingRecursion
+	ArrayAndSumProblem.cpp
+	GeneratingPermutationUsingRecursion.cpp
+	GeneratingSubsetsRecursively.cpp
+	GeneratingSubsetsUsingBitMap.cpp
+	NQueenProblemTotalSolutionCount.cpp
+	NQueenProblemUsingRecursion.cpp
 ch06. Greedy Algorithms
 
-	GreedyAlgorithmHuffmanAlgorithm
-	GreedyAlgorithmMinimizingSums
-	GreedyAlgorithmTasksAndDeadLineProblem
-	GreedyAlgorithmTaskSchedulingProblem
+	GreedyAlgorithmHuffmanAlgorithm.cpp
+	GreedyAlgorithmMinimizingSums.cpp
+	GreedyAlgorithmTasksAndDeadLineProblem.cpp
+	GreedyAlgorithmTaskSchedulingProblem.cpp
 ch07. Dynamic Programming
 
-	DynamicProgrammingAllPossibleCombinationOfCoinsThatSumUpForGivenNumber
-	DynamicProgrammingCoinChangeProblem
-	DynamicProgrammingCoinsThatSumUpForCoinChangeProblem
-	DynamicProgrammingEditDistanceProblem
-	DynamicProgrammingEggAndFloorProblem
-	DynamicProgrammingKnapsackProblem
-	DynamicProgrammingLongestIncreasingSubsequenceMostEfficientSolution
-	DynamicProgrammingLongestIncreasingSubsequenceProblem
-	DynamicProgrammingLongestPlaindromicSubsequence
-	DynamicProgrammingPathsInAGrid
-	DynamicProgrammingTotalWaysToSolveCoinChangeProblem
-	DynamicProgrammingZeroOneKnapsackProblem
+	DynamicProgrammingAllPossibleCombinationOfCoinsThatSumUpForGivenNumber.cpp
+	DynamicProgrammingCoinChangeProblem.cpp
+	DynamicProgrammingCoinsThatSumUpForCoinChangeProblem.cpp
+	DynamicProgrammingEditDistanceProblem.cpp
+	DynamicProgrammingEggAndFloorProblem.cpp
+	DynamicProgrammingKnapsackProblem.cpp
+	DynamicProgrammingLongestIncreasingSubsequenceMostEfficientSolution.cpp
+	DynamicProgrammingLongestIncreasingSubsequenceProblem.cpp
+	DynamicProgrammingLongestPlaindromicSubsequence.cpp
+	DynamicProgrammingPathsInAGrid.cpp
+	DynamicProgrammingTotalWaysToSolveCoinChangeProblem.cpp
+	DynamicProgrammingZeroOneKnapsackProblem.cpp
 ch08. Amortized Analysis
 
-	CountNumberOfSubArraysWithGivenSumProblem
-	NearestSmallestElementProblem
-	SlidingWindowMinimumProblem
-	ThreeSumProblem
-	TwoPointerMethodForCalculatingSubArraySum
-	TwoSumProblem
+	CountNumberOfSubArraysWithGivenSumProblem.cpp
+	NearestSmallestElementProblem.cpp
+	SlidingWindowMinimumProblem.cpp
+	ThreeSumProblem.cpp
+	TwoPointerMethodForCalculatingSubArraySum.cpp
+	TwoSumProblem.cpp
 ch09. Range Queries
 
-	BinaryIndexedTree
-	PrefixSumArray
-	PrefixSumMatrix
-	RangeMinumumQueryUsingSparseTable
-	RangeUpdateUsingDifferenceArray
-	SegmentTreeForRangeQueryAndSingleUpdation
-	SegmentTreeRangeMinimum
+	BinaryIndexedTree.cpp
+	PrefixSumArray.cpp
+	PrefixSumMatrix.cpp
+	RangeMinumumQueryUsingSparseTable.cpp
+	RangeUpdateUsingDifferenceArray.cpp
+	SegmentTreeForRangeQueryAndSingleUpdation.cpp
+	SegmentTreeRangeMinimum.cpp
 ch10.  Bit Manipulations
 
-	BitWiseSubset
-	CountingSubgrids
-	DecimalToBinaryUsingBitManipulation
-	ElevatorAndPersons_(BIT+DP)
-	ProductAndDays(Bit+DP)
-	ProductAndDays(Bit+DP)_MorePrecise
-	SetOperationsUsingBitManipulation
-	SumOverSubsets
+	BitWiseSubset.cpp
+	CountingSubgrids.cpp
+	DecimalToBinaryUsingBitManipulation.cpp
+	ElevatorAndPersons_(BIT+DP).cpp
+	ProductAndDays(Bit+DP).cpp
+	ProductAndDays(Bit+DP)_MorePrecise.cpp
+	SetOperationsUsingBitManipulation.cpp
+	SumOverSubsets.cpp
 ch11. Graph basics
 
-	GraphRepresentationUsingList
-	graph_basics
+	GraphRepresentationUsingList.cpp
+	graph_basics.pdf
 ch12. Graph Traversal
 
-	BreadthFirstSearch
-	ComponentCountInGraph
-	CyclicGraphCheck
-	DepthFirstSearch
+	BreadthFirstSearch.cpp
+	ComponentCountInGraph.cpp
+	CyclicGraphCheck.cpp
+	DepthFirstSearch.cpp
 ch13. Shortest Paths
 
-	BellmanFordAlgorithm
-	DijkstraAlgorithm
-	FloydWarshallAlgorithm
-	ShortestPathFasterAlgorithm
+	BellmanFordAlgorithm.cpp
+	DijkstraAlgorithm.cpp
+	FloydWarshallAlgorithm.cpp
+	ShortestPathFasterAlgorithm.cpp
 ch14. Tree Algorithms
 
-	AllLongestPathProblemInTree
-	FindingDiameterOfABinaryTree
-	FindingDiameterOfABinaryTreeOptimized
-	FindingDiameterOfNAryTreeDFS
-	FindingHeightOfABinaryTree
-	NAryInOrderTreeTraversal
-	NAryTreeTraversalUsingDFS
-	TraversalTechniquesBinaryTree
+	AllLongestPathProblemInTree.cpp
+	FindingDiameterOfABinaryTree.cpp
+	FindingDiameterOfABinaryTreeOptimized.cpp
+	FindingDiameterOfNAryTreeDFS.cpp
+	FindingHeightOfABinaryTree.cpp
+	NAryInOrderTreeTraversal.cpp
+	NAryTreeTraversalUsingDFS.cpp
+	TraversalTechniquesBinaryTree.cpp
 ch15. Spanning Trees
 
-	KruskalAlgorithm
-	PrimsAlgorithm
+	KruskalAlgorithm.cpp
+	PrimsAlgorithm.cpp
 ch16. Directed Graphs
 
-	CountingNumberOfPathsInDAG
-	CycleDetectionUsingSuccessorGraphs
-	SuccessorGraphs
-	TopologicalSort
+	CountingNumberOfPathsInDAG.cpp
+	CycleDetectionUsingSuccessorGraphs.cpp
+	SuccessorGraphs.cpp
+	TopologicalSort.cpp
 ch17. Strong Connectivity
 
-	StronglyConnectedComponentsInGraph
+	StronglyConnectedComponentsInGraph.cpp
 ch18. Tree Queries
 
-	CalculatingNumberOfNodesWithValueX
-	DistanceBetweenTwoNodes
-	KthAncestorInATree
-	LowestCommonAncestorForBinarySearchTree
-	LowestCommonAncestorUsingEulerTravelAndSegmentTrees
-	LowestCommonAncestorUsingEulerTravelAndSparseTable
-	LowestCommonAncestorUsingTarzanAlgorithm
-	RootToNodeSumQuery
-	SubTreeSumProblem
+	CalculatingNumberOfNodesWithValueX.cpp
+	DistanceBetweenTwoNodes.cpp
+	KthAncestorInATree.cpp
+	LowestCommonAncestorForBinarySearchTree.cpp
+	LowestCommonAncestorUsingEulerTravelAndSegmentTrees.cpp
+	LowestCommonAncestorUsingEulerTravelAndSparseTable.cpp
+	LowestCommonAncestorUsingTarzanAlgorithm.cpp
+	RootToNodeSumQuery.cpp
+	SubTreeSumProblem.cpp
 ch19. Paths and Circuits
 
-	FindingAllHamiltonianPathInGraph
-	FindingEulerianPathInDirectedGraph
-	FindingEulerianPathInUndirectedGraph
-	FindingHamiltonianCycleInGraph
-	Knight'sTourProblem
-	Knight'sTourProblemAllPossibleSolution
-	Knight'sTourProblemWarnsdorffAlgorithm
+	FindingAllHamiltonianPathInGraph.cpp
+	FindingEulerianPathInDirectedGraph.cpp
+	FindingEulerianPathInUndirectedGraph.cpp
+	FindingHamiltonianCycleInGraph.cpp
+	Knight'sTourProblem.cpp
+	Knight'sTourProblemAllPossibleSolution.cpp
+	Knight'sTourProblemWarnsdorffAlgorithm.cpp
 ch20. Flows and Cuts
 
-	CapacityScalingAlgorithmForMaximumFlow
-	EdmandKarpAlgorithm
-	MaximumDisjointNodesCount
+	CapacityScalingAlgorithmForMaximumFlow.cpp
+	EdmandKarpAlgorithm.cpp
+	MaximumDisjointNodesCount.cpp
 ch21. Number Theory
 
-	ChineseRemainderTheorem
-	DiophantineEquations
-	EuclidAlgorithmGCD
-	EulerTotientFunctionForFindingCoPrimes
-	ExtendedEuclideanAlgorithm
-	FindingExponential
-	FindingModularExponential
-	ModularInverseCalculationForAGivenRange
-	PerfectNumbers
-	ProblemWithPrimes
-	SieveOfEratosthenes
-	WilsonTheoremForPrimeNumber
+	ChineseRemainderTheorem.cpp
+	DiophantineEquations.cpp
+	EuclidAlgorithmGCD.cpp
+	EulerTotientFunctionForFindingCoPrimes.cpp
+	ExtendedEuclideanAlgorithm.cpp
+	FindingExponential.cpp
+	FindingModularExponential.cpp
+	ModularInverseCalculationForAGivenRange.cpp
+	PerfectNumbers.cpp
+	ProblemWithPrimes.cpp
+	SieveOfEratosthenes.cpp
+	WilsonTheoremForPrimeNumber.cpp
 ch22. Combinatorics
 
-	BoxesAndBallProblem
-	BurnSideLemmaSymmetricalNecklaceProblem
-	CatalanNumber
-	CayleyFormula
-	Derangements
-	PruferSequenceForATree
-	PruferSequenceInLinearTime
-	TreeConstructionUsingPruferCode
+	BoxesAndBallProblem.cpp
+	BurnSideLemmaSymmetricalNecklaceProblem.cpp
+	CatalanNumber.cpp
+	CayleyFormula.cpp
+	Derangements.cpp
+	PruferSequenceForATree.cpp
+	PruferSequenceInLinearTime.cpp
+	TreeConstructionUsingPruferCode.cpp
 ch23. Matrices
 
-	AdditionOfTwoMatrixes
-	DeterminantOfMatrixUsingRecursion
-	DeterminantOfMatrixWithoutRecursion
-	FibonacciUsingMatrixExponential
-	InverseOfAMatrix
-	KirchhoffTheoremToFindMinimumSpannigTreeCount
-	MatrixExponential
-	MultiplicationOfTwoMatrixes
-	TransposeOfAMatrix
+	AdditionOfTwoMatrixes.cpp
+	DeterminantOfMatrixUsingRecursion.cpp
+	DeterminantOfMatrixWithoutRecursion.cpp
+	FibonacciUsingMatrixExponential.cpp
+	InverseOfAMatrix.cpp
+	KirchhoffTheoremToFindMinimumSpannigTreeCount.cpp
+	MatrixExponential.cpp
+	MultiplicationOfTwoMatrixes.cpp
+	TransposeOfAMatrix.cpp
 ch24. Probability
 
-	GraphColoringUsingGreedyAlgorithm
-	MarkovChainProbabilityUsingMartixExponential
-	MColoringProblemUsingBackTracking
-	probability
+	GraphColoringUsingGreedyAlgorithm.cpp
+	MarkovChainProbabilityUsingMartixExponential.cpp
+	MColoringProblemUsingBackTracking.cpp
+	probability.pdf
 ch25. Game Theory
 
-	GrundyNumberCalculation
-	NimGame
-	SpragueGrundyTheorem
+	GrundyNumberCalculation.cpp
+	NimGame.cpp
+	SpragueGrundyTheorem.cpp
 ch26. String Algorithms
 
-	KMPAlgorithm
-	Trie
-	ZAlgorithm
+	KMPAlgorithm.cpp
+	Trie.cpp
+	ZAlgorithm.cpp
 ch27. Square root algorithms
 
-	DistanceBetweenTwoCellsInAGrid
-	MoAlgorithm
-	SqrtDecomposition
+	DistanceBetweenTwoCellsInAGrid.cpp
+	MoAlgorithm.cpp
+	SqrtDecomposition.cpp
 ch28. Segement Tree Revisited
 
-	DynamicSegmentTree
-	PersistentSegmentTree
-	SegmentTreeBottomUp
-	SegmentTreeLazyPropagation
-	SegmentTreeTopDown
-	TwoDimensionalSegmentTree
+	DynamicSegmentTree.cpp
+	PersistentSegmentTree.cpp
+	SegmentTreeBottomUp.cpp
+	SegmentTreeLazyPropagation.cpp
+	SegmentTreeTopDown.cpp
+	TwoDimensionalSegmentTree.cpp
 ch29. Geometry
 
-	ComplexNumberImplementation
-	FindingMaximumManhattanDistanceBetweenPoints
-	Geometry
-	HeronFormulaTriangleArea
-	PicksTheoremForPolygonAreaCalculation
-	ShoelaceFormulaForAreaCalculation
+	ComplexNumberImplementation.cpp
+	FindingMaximumManhattanDistanceBetweenPoints.cpp
+	Geometry.pdf
+	HeronFormulaTriangleArea.cpp
+	PicksTheoremForPolygonAreaCalculation.cpp
+	ShoelaceFormulaForAreaCalculation.cpp
 ch30. Sweep line algorithms
 
-	ClosestPairProblem
-	ConvexHall
-	IntersectionPoints
-	MaximumNumberOfEmployeeInOfc
+	ClosestPairProblem.cpp
+	ConvexHall.cpp
+	IntersectionPoints.cpp
+	MaximumNumberOfEmployeeInOfc.cpp
 Misc Problems
 
-	AllPossiblePalindromicSubsequence
-	FindingAllCombinationsInGivenInputArray
+	AllPossiblePalindromicSubsequence.cpp
+	FindingAllCombinationsInGivenInputArray.cpp
