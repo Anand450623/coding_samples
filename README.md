@@ -14,8 +14,8 @@ ch02. Time complexity
 	Time complexity.pdf
 ch03. Sorting
 
-	Sorting.pdf
 	MergeSort.cpp
+	Sorting.pdf
 ch04. Data Structures
 
 	countingCommonElements.cpp
