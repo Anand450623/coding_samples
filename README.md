@@ -223,3 +223,4 @@ Misc Problems
 
 	AllPossiblePalindromicSubsequence.cpp
 	FindingAllCombinationsInGivenInputArray.cpp
+	PermutationGenerator.java
